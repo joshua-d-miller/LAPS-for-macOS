@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="cSK-T2-P4V">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="lNK-pF-iX1">
+            <objects>
+                <customObject id="ti3-FC-HA3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <windowController showSeguePresentationStyle="single" id="cSK-T2-P4V" sceneMemberID="viewController">
+                    <window key="window" title="LAPS for macOS" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="WJs-H6-owI">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="430" y="918" width="496" height="179"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+                        <connections>
+                            <outlet property="delegate" destination="cSK-T2-P4V" id="Lev-gh-0f7"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="RR0-Xs-LJO" kind="relationship" relationship="window.shadowedContentViewController" id="vOt-yV-2WO"/>
+                    </connections>
+                </windowController>
+            </objects>
+            <point key="canvasLocation" x="-877" y="-670"/>
+        </scene>
+        <!--Tab View Controller-->
+        <scene sceneID="nGl-5Y-K3f">
+            <objects>
+                <tabViewController selectedTabViewItemIndex="0" id="RR0-Xs-LJO" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem id="qyb-Ke-egO"/>
+                        <tabViewItem id="l7P-as-Qu6"/>
+                    </tabViewItems>
+                    <tabView key="tabView" type="noTabsNoBorder" id="RAP-Sk-GpP">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <connections>
+                            <outlet property="delegate" destination="RR0-Xs-LJO" id="2YD-c3-ZCG"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="RAP-Sk-GpP" id="oKC-uM-r3a"/>
+                        <segue destination="sTc-bb-Vgv" kind="relationship" relationship="tabItems" id="9L6-h5-GjI"/>
+                        <segue destination="IuV-eI-Fca" kind="relationship" relationship="tabItems" id="rTF-Gs-FtE"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="cC9-r1-bG9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-883" y="-366"/>
+        </scene>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="LAPS for macOS" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="LAPS for macOS" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About LAPS for macOS" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Hide LAPS for macOS" keyEquivalent="h" id="Olw-nP-bQN">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit LAPS for macOS" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Edit" id="5QF-Oa-p0T">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Edit" id="W48-6f-4Dl">
+                                    <items>
+                                        <menuItem title="Undo" keyEquivalent="z" id="dRJ-4n-Yzg">
+                                            <connections>
+                                                <action selector="undo:" target="Ady-hI-5gd" id="M6e-cu-g7V"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Redo" keyEquivalent="Z" id="6dh-zS-Vam">
+                                            <connections>
+                                                <action selector="redo:" target="Ady-hI-5gd" id="oIA-Rs-6OD"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="WRV-NI-Exz"/>
+                                        <menuItem title="Cut" keyEquivalent="x" id="uRl-iY-unG">
+                                            <connections>
+                                                <action selector="cut:" target="Ady-hI-5gd" id="YJe-68-I9s"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Copy" keyEquivalent="c" id="x3v-GG-iWU">
+                                            <connections>
+                                                <action selector="copy:" target="Ady-hI-5gd" id="G1f-GL-Joy"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Paste" keyEquivalent="v" id="gVA-U4-sdL">
+                                            <connections>
+                                                <action selector="paste:" target="Ady-hI-5gd" id="UvS-8e-Qdg"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Delete" id="pa3-QI-u2k">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="delete:" target="Ady-hI-5gd" id="0Mk-Ml-PaM"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Select All" keyEquivalent="a" id="Ruw-6m-B2m">
+                                            <connections>
+                                                <action selector="selectAll:" target="Ady-hI-5gd" id="VNm-Mi-diN"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Help" id="wpr-3q-Mcd">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
+                                    <items>
+                                        <menuItem title="LAPS for macOS Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                            <connections>
+                                                <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="LAPS_for_macOS" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-883" y="-885"/>
+        </scene>
+        <!--Computer-->
+        <scene sceneID="ouT-UR-jeY">
+            <objects>
+                <viewController title="Computer" storyboardIdentifier="ComputerViewController" id="sTc-bb-Vgv" customClass="ComputerViewController" customModule="LAPS_for_macOS" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" id="h1U-tm-rFR">
+                        <rect key="frame" x="0.0" y="0.0" width="496" height="179"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="kCF-ju-QCR">
+                                <rect key="frame" x="19" y="142" width="104" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Computer Name" id="5u5-AZ-MRE">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="Y16-tf-LEX">
+                                <rect key="frame" x="20" y="117" width="320" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="R4H-K1-SGn">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="OzV-fJ-Aj7">
+                                <rect key="frame" x="19" y="94" width="99" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="Rgb-BG-iP7"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="LAPS Password" id="1Di-fU-4PO">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="3dN-UK-3FP">
+                                <rect key="frame" x="20" y="69" width="320" height="23"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="eGT-uX-9Sk">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="93" translatesAutoresizingMaskIntoConstraints="NO" id="dXP-lq-CJJ">
+                                <rect key="frame" x="19" y="46" width="97" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="4eo-yE-364"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Expiration Date" id="lP4-UP-1qa">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="vlf-mk-X5v">
+                                <rect key="frame" x="20" y="20" width="320" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="4sU-GL-6sh">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Fj-2u-vwi">
+                                <rect key="frame" x="342" y="111" width="124" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="112" id="znE-xa-yoO"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Get Password" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yDg-KJ-ptv">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="Get_Password:" target="sTc-bb-Vgv" id="Naj-Oj-jic"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uSE-31-mRz">
+                                <rect key="frame" x="342" y="13" width="140" height="32"/>
+                                <buttonCell key="cell" type="push" title="Expire Password" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aWM-Rq-UYE">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="Expire_Password:" target="sTc-bb-Vgv" id="oi0-GU-hKA"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Y16-tf-LEX" firstAttribute="leading" secondItem="h1U-tm-rFR" secondAttribute="leading" constant="20" symbolic="YES" id="Dlc-Fd-5ea"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OzV-fJ-Aj7" secondAttribute="trailing" constant="20" symbolic="YES" id="F3J-Ah-gbY"/>
+                            <constraint firstItem="kCF-ju-QCR" firstAttribute="top" secondItem="h1U-tm-rFR" secondAttribute="top" constant="20" symbolic="YES" id="G4D-IO-e59"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dXP-lq-CJJ" secondAttribute="trailing" constant="20" symbolic="YES" id="Hcu-a7-oPp"/>
+                            <constraint firstAttribute="trailing" secondItem="0Fj-2u-vwi" secondAttribute="trailing" constant="36" id="JGr-C9-AiS"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uSE-31-mRz" secondAttribute="trailing" constant="20" symbolic="YES" id="Mte-Mb-b8X"/>
+                            <constraint firstItem="OzV-fJ-Aj7" firstAttribute="top" secondItem="Y16-tf-LEX" secondAttribute="bottom" constant="6" id="Njq-cy-X5V"/>
+                            <constraint firstItem="Y16-tf-LEX" firstAttribute="leading" secondItem="3dN-UK-3FP" secondAttribute="leading" id="Scu-OL-2xB"/>
+                            <constraint firstItem="Y16-tf-LEX" firstAttribute="trailing" secondItem="3dN-UK-3FP" secondAttribute="trailing" id="U7p-r5-aNm"/>
+                            <constraint firstItem="vlf-mk-X5v" firstAttribute="bottom" secondItem="uSE-31-mRz" secondAttribute="bottom" id="UMW-F9-HNh"/>
+                            <constraint firstItem="3dN-UK-3FP" firstAttribute="leading" secondItem="vlf-mk-X5v" secondAttribute="leading" id="UOK-kR-O8m"/>
+                            <constraint firstItem="kCF-ju-QCR" firstAttribute="leading" secondItem="OzV-fJ-Aj7" secondAttribute="leading" id="WAT-bS-onc"/>
+                            <constraint firstItem="Y16-tf-LEX" firstAttribute="top" secondItem="kCF-ju-QCR" secondAttribute="bottom" constant="3" id="Wk9-iT-hsZ"/>
+                            <constraint firstItem="dXP-lq-CJJ" firstAttribute="top" secondItem="3dN-UK-3FP" secondAttribute="bottom" constant="6" id="YX2-05-6q3"/>
+                            <constraint firstItem="uSE-31-mRz" firstAttribute="leading" secondItem="vlf-mk-X5v" secondAttribute="trailing" constant="8" symbolic="YES" id="ffl-Cz-eaY"/>
+                            <constraint firstItem="uSE-31-mRz" firstAttribute="top" secondItem="0Fj-2u-vwi" secondAttribute="bottom" constant="77" id="gUM-kf-bGt"/>
+                            <constraint firstItem="kCF-ju-QCR" firstAttribute="leading" secondItem="h1U-tm-rFR" secondAttribute="leading" constant="21" id="jE3-Xa-SHJ"/>
+                            <constraint firstItem="3dN-UK-3FP" firstAttribute="top" secondItem="OzV-fJ-Aj7" secondAttribute="bottom" constant="2" id="kzz-sI-tZI"/>
+                            <constraint firstItem="OzV-fJ-Aj7" firstAttribute="leading" secondItem="dXP-lq-CJJ" secondAttribute="leading" id="nmj-TE-H5f"/>
+                            <constraint firstItem="vlf-mk-X5v" firstAttribute="centerY" secondItem="uSE-31-mRz" secondAttribute="centerY" id="s4j-x7-TW3"/>
+                            <constraint firstItem="Y16-tf-LEX" firstAttribute="centerY" secondItem="0Fj-2u-vwi" secondAttribute="centerY" id="u1X-6q-Q6V"/>
+                            <constraint firstItem="vlf-mk-X5v" firstAttribute="top" secondItem="dXP-lq-CJJ" secondAttribute="bottom" constant="4" id="vAR-ny-UwQ"/>
+                            <constraint firstItem="0Fj-2u-vwi" firstAttribute="leading" secondItem="uSE-31-mRz" secondAttribute="leading" id="wNc-LY-7YF"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kCF-ju-QCR" secondAttribute="trailing" constant="20" symbolic="YES" id="wNu-du-cdN"/>
+                            <constraint firstItem="0Fj-2u-vwi" firstAttribute="leading" secondItem="Y16-tf-LEX" secondAttribute="trailing" constant="8" symbolic="YES" id="xPV-IE-fTF"/>
+                            <constraint firstAttribute="bottom" secondItem="vlf-mk-X5v" secondAttribute="bottom" constant="20" symbolic="YES" id="znU-E6-SZs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Computer_Name_field" destination="Y16-tf-LEX" id="itd-gA-cwE"/>
+                        <outlet property="Expiration_Date_field" destination="vlf-mk-X5v" id="gJ5-HJ-S8u"/>
+                        <outlet property="LAPS_Password_field" destination="3dN-UK-3FP" id="xGx-EQ-to8"/>
+                    </connections>
+                </viewController>
+                <customObject id="pmM-bs-8hk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-298" y="-671.5"/>
+        </scene>
+        <!--Credentials-->
+        <scene sceneID="fz7-Ib-Ghy">
+            <objects>
+                <customObject id="U4D-Kj-Hwz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController title="Credentials" storyboardIdentifier="CredentialViewController" id="IuV-eI-Fca" customClass="CredentialsViewController" customModule="LAPS_for_macOS" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" id="ebk-8O-rXg">
+                        <rect key="frame" x="0.0" y="0.0" width="496" height="179"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" preferredMaxLayoutWidth="150" translatesAutoresizingMaskIntoConstraints="NO" id="KzR-IM-rhd">
+                                <rect key="frame" x="94" y="54" width="150" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="X5p-mq-KNF"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="oiY-Bz-tbl">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="62" translatesAutoresizingMaskIntoConstraints="NO" id="7fo-45-ZtA">
+                                <rect key="frame" x="93" y="78" width="66" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Username" id="Svk-Dh-Pb6">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="59" translatesAutoresizingMaskIntoConstraints="NO" id="3cP-nL-759">
+                                <rect key="frame" x="251" y="78" width="63" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password" id="ZWb-1H-UFY">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <secureTextField verticalHuggingPriority="750" preferredMaxLayoutWidth="150" translatesAutoresizingMaskIntoConstraints="NO" id="SLR-N2-YZa">
+                                <rect key="frame" x="252" y="54" width="150" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="yZH-PT-Yz4"/>
+                                </constraints>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="wmI-TN-sq4">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="308" translatesAutoresizingMaskIntoConstraints="NO" id="dkp-Ug-kXA">
+                                <rect key="frame" x="92" y="103" width="312" height="51"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Please enter your Active Directory credentials that have access to  view LAPS Passwords for computers" id="jqq-nz-FaH">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xiP-Rh-keP">
+                                <rect key="frame" x="131" y="18" width="70" height="32"/>
+                                <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zYa-RI-8u6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="Save_Credentials:" target="IuV-eI-Fca" id="mbB-F2-KxA"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RDc-Dg-HfK">
+                                <rect key="frame" x="199" y="18" width="85" height="32"/>
+                                <buttonCell key="cell" type="push" title="Update" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ty2-C8-Eul">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="Update_Credentials:" target="IuV-eI-Fca" id="qnb-FB-RYV"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IWI-1B-anE">
+                                <rect key="frame" x="279" y="18" width="89" height="32"/>
+                                <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hmd-cQ-Wza">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="Remove_Credentials:" target="IuV-eI-Fca" id="7Sg-xR-QSF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="7fo-45-ZtA" firstAttribute="baseline" secondItem="3cP-nL-759" secondAttribute="baseline" id="2xx-cL-8lp"/>
+                            <constraint firstItem="7fo-45-ZtA" firstAttribute="leading" secondItem="ebk-8O-rXg" secondAttribute="leading" constant="95" id="6Fk-QK-bsh"/>
+                            <constraint firstItem="SLR-N2-YZa" firstAttribute="trailing" secondItem="dkp-Ug-kXA" secondAttribute="trailing" id="8iX-0q-9nt"/>
+                            <constraint firstItem="xiP-Rh-keP" firstAttribute="baseline" secondItem="RDc-Dg-HfK" secondAttribute="baseline" id="BNt-4O-hXu"/>
+                            <constraint firstItem="KzR-IM-rhd" firstAttribute="top" secondItem="7fo-45-ZtA" secondAttribute="bottom" constant="2" id="CLv-eW-k3Y"/>
+                            <constraint firstItem="IWI-1B-anE" firstAttribute="leading" secondItem="RDc-Dg-HfK" secondAttribute="trailing" constant="7" id="MjR-o0-wUM"/>
+                            <constraint firstItem="RDc-Dg-HfK" firstAttribute="leading" secondItem="xiP-Rh-keP" secondAttribute="trailing" constant="10" id="RHY-6A-ZIz"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IWI-1B-anE" secondAttribute="trailing" constant="20" symbolic="YES" id="RU0-th-ImJ"/>
+                            <constraint firstItem="SLR-N2-YZa" firstAttribute="leading" secondItem="KzR-IM-rhd" secondAttribute="trailing" constant="8" symbolic="YES" id="VHj-q8-Yeg"/>
+                            <constraint firstItem="3cP-nL-759" firstAttribute="leading" secondItem="7fo-45-ZtA" secondAttribute="trailing" constant="96" id="aXY-az-mwf"/>
+                            <constraint firstItem="KzR-IM-rhd" firstAttribute="baseline" secondItem="SLR-N2-YZa" secondAttribute="baseline" id="ckS-C0-mbm"/>
+                            <constraint firstItem="xiP-Rh-keP" firstAttribute="top" secondItem="KzR-IM-rhd" secondAttribute="bottom" constant="8" symbolic="YES" id="dEr-2Z-Nzl"/>
+                            <constraint firstItem="RDc-Dg-HfK" firstAttribute="baseline" secondItem="IWI-1B-anE" secondAttribute="baseline" id="eEA-5F-4ge"/>
+                            <constraint firstItem="7fo-45-ZtA" firstAttribute="top" secondItem="dkp-Ug-kXA" secondAttribute="bottom" constant="8" symbolic="YES" id="hCf-YD-RPR"/>
+                            <constraint firstItem="dkp-Ug-kXA" firstAttribute="centerX" secondItem="ebk-8O-rXg" secondAttribute="centerX" id="ivv-7M-hhd"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3cP-nL-759" secondAttribute="trailing" constant="20" symbolic="YES" id="joN-yR-M3A"/>
+                            <constraint firstItem="dkp-Ug-kXA" firstAttribute="top" secondItem="ebk-8O-rXg" secondAttribute="top" constant="25" id="oXU-RF-dsP"/>
+                            <constraint firstItem="xiP-Rh-keP" firstAttribute="leading" secondItem="ebk-8O-rXg" secondAttribute="leading" constant="137" id="uhZ-Ik-BeL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Password_field" destination="SLR-N2-YZa" id="V6g-dl-G4C"/>
+                        <outlet property="Username_field" destination="KzR-IM-rhd" id="Uwv-Rk-jaw"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-298" y="-382"/>
+        </scene>
+    </scenes>
+</document>
