@@ -11,6 +11,7 @@ import OpenDirectory
 
 var username: String = ""
 var password: String = ""
+var custom_date: Date?
 
 class ComputerViewController: NSViewController {
     
@@ -20,6 +21,9 @@ class ComputerViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewDidAppear()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.viewDidAppear), name:NSNotification.Name(rawValue: "loadView"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOFReceivedNotication), name:NSNotification.Name(rawValue: "DatePopup"), object: nil)
         // Do any additional setup after loading the view.
     }
 
@@ -28,14 +32,20 @@ class ComputerViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    override func viewDidAppear() {
+        if custom_date != nil {
+            Expiration_Date_field.stringValue = date_formatter().string(from: custom_date!)
+        }
+    }
+
+    @objc func methodOFReceivedNotication(notification: NSNotification) {
+        self.performSegue(withIdentifier: "DatePopup", sender: self)
+    }
     
 // =====================================
 // Get the LAPS Computer Password Button
 // =====================================
    @IBAction func Get_Password(_ sender: Any) {
-    
-        // Date Formatting for application
-        let dateFormatter = date_formatter()
         
         // Get Username, Password and Computer Name from input
         let Computer_Name: String = Computer_Name_field.stringValue
@@ -74,7 +84,7 @@ class ComputerViewController: NSViewController {
         
         // Convert it to Date and add it to the field
         let exp_date = time_conversion(time_type: TimeCon.epoch, exp_time: exp_time!, exp_days: nil) as! Date
-        Expiration_Date_field.stringValue = dateFormatter.string(from: exp_date)
+        Expiration_Date_field.stringValue = date_formatter().string(from: exp_date)
 
     }
     
@@ -104,11 +114,17 @@ class ComputerViewController: NSViewController {
             try reset_expiration_date(computer_record: computer_record!)
             let laps_alert = NSAlert()
             laps_alert.messageText = "Expiration Date Changed"
-            laps_alert.informativeText = "The Expiration date of this computer has been set to January 1st, 2001 which upon next checkin will set a new LAPS Password"
+            if custom_date != nil {
+                laps_alert.informativeText = "The Expiration date of this computer has been set to " + date_formatter().string(from: custom_date!) + " which upon next checkin will set a new LAPS Password"
+            }
+            else {
+                laps_alert.informativeText = "The Expiration date of this computer has been set to Mon Jan 01, 2001 12:00:00 AM which upon next checkin will set a new LAPS Password"
+                Expiration_Date_field.stringValue = "Mon Jan 01, 2001 12:00:00 AM"
+            }
             laps_alert.addButton(withTitle: "OK")
             laps_alert.alertStyle = NSAlert.Style.warning
             laps_alert.runModal()
-            Expiration_Date_field.stringValue = "Mon Jan 01, 2001 12:00:00 AM"
+            custom_date = nil
             return
         } catch {
             let laps_alert = NSAlert()
@@ -125,6 +141,16 @@ class ComputerViewController: NSViewController {
             return
         }
     }
-
 }
-
+// ********************************
+// Custom Class for Expiration Date
+// text field so we can trigger the
+// segue when clicking into the
+// text field. Source:
+// https://stackoverflow.com/questions/27604192/ios-how-to-segue-programmatically-using-swift
+// ********************************
+class ExpDateField: NSTextField {
+    override func mouseDown(with event: NSEvent) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DatePopup"), object: nil)
+    }
+}

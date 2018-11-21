@@ -78,5 +78,12 @@ func reset_expiration_date(computer_record: ODRecord) throws {
     // Set the expiration date on the computer as 01/01/2001 which will allow
     // the computer to change its LAPS password upon next check-in
     let default_expiration_time = "126227988000000000"
-    try computer_record.setValue(default_expiration_time, forAttribute: "dsAttrTypeNative:ms-Mcs-AdmPwdExpirationTime")
+    if custom_date != nil {
+        let custom_converted_time = String(Int((custom_date?.timeIntervalSince1970)!))
+        let custom_expiration_time = time_conversion(time_type: TimeCon.customtime, exp_time: custom_converted_time, exp_days: nil)
+        try computer_record.setValue(custom_expiration_time, forAttribute: "dsAttrTypeNative:ms-Mcs-AdmPwdExpirationTime")
+    }
+    else {
+        try computer_record.setValue(default_expiration_time, forAttribute: "dsAttrTypeNative:ms-Mcs-AdmPwdExpirationTime")
+    }
 }

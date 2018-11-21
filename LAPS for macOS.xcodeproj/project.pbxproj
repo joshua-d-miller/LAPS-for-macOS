@@ -14,6 +14,7 @@
 		E515DA5F20FFBAE10072873F /* ADTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E515DA5E20FFBAE10072873F /* ADTools.swift */; };
 		E515DA6120FFC8F90072873F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E515DA6020FFC8F90072873F /* DateFormatter.swift */; };
 		E515DA6320FFC9160072873F /* TimeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E515DA6220FFC9160072873F /* TimeConversion.swift */; };
+		E5695F3921A48E55009592DC /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5695F3821A48E55009592DC /* DatePickerViewController.swift */; };
 		E5BD64B92104006C0084A4DB /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD64B82104006C0084A4DB /* Keychain.swift */; };
 		E5BD64BD210640C30084A4DB /* CredentialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD64BC210640C30084A4DB /* CredentialsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		E515DA5E20FFBAE10072873F /* ADTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADTools.swift; sourceTree = "<group>"; };
 		E515DA6020FFC8F90072873F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		E515DA6220FFC9160072873F /* TimeConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConversion.swift; sourceTree = "<group>"; };
+		E5695F3821A48E55009592DC /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		E5BD64B82104006C0084A4DB /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		E5BD64BC210640C30084A4DB /* CredentialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +67,7 @@
 			children = (
 				E515DA2A20FFB2A40072873F /* AppDelegate.swift */,
 				E515DA2C20FFB2A40072873F /* ComputerViewController.swift */,
+				E5695F3821A48E55009592DC /* DatePickerViewController.swift */,
 				E5BD64BC210640C30084A4DB /* CredentialsViewController.swift */,
 				E5BD64B82104006C0084A4DB /* Keychain.swift */,
 				E515DA6020FFC8F90072873F /* DateFormatter.swift */,
@@ -105,7 +108,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "The Pennsylvania State University";
 				TargetAttributes = {
 					E515DA2620FFB2A40072873F = {
@@ -158,6 +161,7 @@
 				E5BD64BD210640C30084A4DB /* CredentialsViewController.swift in Sources */,
 				E515DA6320FFC9160072873F /* TimeConversion.swift in Sources */,
 				E515DA5F20FFBAE10072873F /* ADTools.swift in Sources */,
+				E5695F3921A48E55009592DC /* DatePickerViewController.swift in Sources */,
 				E515DA2D20FFB2A40072873F /* ComputerViewController.swift in Sources */,
 				E515DA2B20FFB2A40072873F /* AppDelegate.swift in Sources */,
 				E5BD64B92104006C0084A4DB /* Keychain.swift in Sources */,
@@ -211,7 +215,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = VQ32N9FEBR;
@@ -273,7 +277,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = VQ32N9FEBR;
