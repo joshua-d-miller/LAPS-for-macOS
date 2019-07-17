@@ -60,6 +60,7 @@ class ComputerViewController: NSViewController {
             \u{2022}  The domain controller is reachable
             \u{2022}  The specified credentials are correct
             \u{2022}  The computer name is spelled correctly
+            \u{2022}  The computer is bound to Active Directory
             """
             laps_alert.addButton(withTitle: "OK")
             laps_alert.alertStyle = NSAlert.Style.warning

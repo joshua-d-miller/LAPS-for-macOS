@@ -5,7 +5,7 @@
 //  ============================================
 //  Created by Joshua D. Miller on 6/13/17.
 //  The Pennsylvania State University
-//  Last Update on 07/18/2018
+//  Last Update on July 17, 2019
 //  ============================================
 
 import Cocoa
@@ -24,6 +24,10 @@ func connect_to_ad(username: String, password: String, computer_name: String) th
     let ad_info = [ SCDynamicStoreCopyValue(net_config, "com.apple.opendirectoryd.ActiveDirectory" as CFString)]
     // Convert ad_info variable to dictionary as it seems there is support for multiple directories
     let adDict = ad_info[0] as? NSDictionary ?? nil
+    // Make sure we are bound to Active Directory
+    if adDict == nil {
+        return(nil)
+    }
     // Use Open Directory to Connect to Active Directory
     let session = ODSession.default()
     // Create the Active Directory Path in case Search Paths are disabled

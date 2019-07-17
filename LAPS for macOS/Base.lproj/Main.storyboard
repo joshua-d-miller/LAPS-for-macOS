@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="cSK-T2-P4V">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="cSK-T2-P4V">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -397,14 +397,6 @@
                                     </allowedInputSourceLocales>
                                 </secureTextFieldCell>
                             </secureTextField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="308" translatesAutoresizingMaskIntoConstraints="NO" id="dkp-Ug-kXA">
-                                <rect key="frame" x="95" y="103" width="312" height="51"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Please enter your Active Directory credentials that have access to  view LAPS Passwords for computers" id="jqq-nz-FaH">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xiP-Rh-keP">
                                 <rect key="frame" x="131" y="18" width="70" height="32"/>
                                 <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zYa-RI-8u6">
@@ -435,6 +427,14 @@
                                     <action selector="Remove_Credentials:" target="IuV-eI-Fca" id="7Sg-xR-QSF"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" preferredMaxLayoutWidth="308" translatesAutoresizingMaskIntoConstraints="NO" id="dkp-Ug-kXA">
+                                <rect key="frame" x="93" y="108" width="312" height="51"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Please enter your Active Directory credentials that have access to  view LAPS Passwords for computers" id="jqq-nz-FaH">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="SLR-N2-YZa" firstAttribute="leading" secondItem="KzR-IM-rhd" secondAttribute="trailing" constant="8" symbolic="YES" id="0ce-su-QLv"/>
