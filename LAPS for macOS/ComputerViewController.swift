@@ -52,7 +52,7 @@ class ComputerViewController: NSViewController {
         LAPS_Password_field.stringValue = ""
         Expiration_Date_field.stringValue = ""
         // Retreieve the computer record for said computer
-        guard let computer_record = try? connect_to_ad(username: username, password: password, computer_name: Computer_Name), computer_record != nil else {
+        guard let computer_record = ((try? connect_to_ad(username: username, password: password, computer_name: Computer_Name)) as ODRecord??), computer_record != nil else {
             let laps_alert = NSAlert()
             laps_alert.messageText = "Unable to retrieve Computer Record"
             laps_alert.informativeText = """
@@ -69,7 +69,7 @@ class ComputerViewController: NSViewController {
         }
         
         // Get the LAPS Password
-        guard let LAPS_Password = try? retrieve_laps_password(computer_record: computer_record!), LAPS_Password != nil else {
+        guard let LAPS_Password = ((try? retrieve_laps_password(computer_record: computer_record!)) as String??), LAPS_Password != nil else {
             let laps_alert = NSAlert()
             laps_alert.messageText = "Unable to retrieve LAPS Password"
             laps_alert.informativeText = "Please verify that the credentials supplied can read the LAPS password and the computer has had a LAPS password submitted to Active Directory and try the request again."
@@ -81,7 +81,7 @@ class ComputerViewController: NSViewController {
         LAPS_Password_field.stringValue = LAPS_Password!
         
         // Get Expiration Time
-        let exp_time = try? retrieve_laps_pw_exp_time(computer_record: computer_record!)
+        let exp_time = ((try? retrieve_laps_pw_exp_time(computer_record: computer_record!)) as String??)
         
         // Convert it to Date and add it to the field
         let exp_date = time_conversion(time_type: TimeCon.epoch, exp_time: exp_time!, exp_days: nil) as! Date
@@ -97,7 +97,7 @@ class ComputerViewController: NSViewController {
         let Computer_Name: String = Computer_Name_field.stringValue
         // Retreieve the computer record for said computer
         
-        guard let computer_record = try? connect_to_ad(username: username, password: password, computer_name: Computer_Name), computer_record != nil else {
+        guard let computer_record = ((try? connect_to_ad(username: username, password: password, computer_name: Computer_Name)) as ODRecord??), computer_record != nil else {
             let laps_alert = NSAlert()
             laps_alert.messageText = "Unable to retrieve Computer Record"
             laps_alert.informativeText = """
