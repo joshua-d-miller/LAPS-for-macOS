@@ -41,6 +41,16 @@ class ComputerViewController: NSViewController {
     @objc func methodOFReceivedNotication(notification: NSNotification) {
         self.performSegue(withIdentifier: "DatePopup", sender: self)
     }
+// =====================================
+// Get the LAPS Computer Password Return
+// =====================================
+
+    @IBAction func Copy_Clipboard(_ sender: Any) {
+        let pasteBoard = NSPasteboard.general
+        pasteBoard.clearContents()
+        pasteBoard.setString(LAPS_Password_field.stringValue, forType: NSPasteboard.PasteboardType.string)
+    }
+    
     
 // =====================================
 // Get the LAPS Computer Password Button
@@ -88,6 +98,11 @@ class ComputerViewController: NSViewController {
         Expiration_Date_field.stringValue = date_formatter().string(from: exp_date)
 
     }
+// =======================================
+// Copy Password to Clipboard Button
+// =======================================
+    
+    
     
 // =======================================
 // Expire the current LAPS Password Button

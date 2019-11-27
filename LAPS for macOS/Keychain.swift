@@ -27,9 +27,12 @@ public class KeychainService: NSObject {
         if let dataFromString: Data = data.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             
             // Instantiate a new default keychain query
-            let keychainQuery: NSMutableDictionary = NSMutableDictionary(
-                objects: [kSecClassGenericPasswordValue, service, account, kCFBooleanTrue as Any, kSecMatchLimitOneValue],
-                forKeys: [kSecClassValue, kSecAttrServiceValue, kSecAttrAccountValue, kSecReturnDataValue, kSecMatchLimitValue])
+            let keychainQuery: [ String : AnyObject ] = [
+                kSecClassValue as String : kSecClassGenericPasswordValue as AnyObject,
+                kSecAttrServiceValue as String: service as AnyObject,
+                kSecAttrAccountValue as String: account as AnyObject,
+                kSecReturnDataValue as String: true as AnyObject,
+                kSecMatchLimitValue as String: kSecMatchLimitOneValue as AnyObject]
             
             let status = SecItemUpdate(keychainQuery as CFDictionary, [kSecValueDataValue:dataFromString] as CFDictionary)
             
@@ -45,9 +48,12 @@ public class KeychainService: NSObject {
     class func removePassword(service: String, account:String) {
         
         // Instantiate a new default keychain query
-        let keychainQuery: NSMutableDictionary = NSMutableDictionary(
-            objects: [kSecClassGenericPasswordValue, service, account, kCFBooleanTrue as Any, kSecMatchLimitOneValue],
-            forKeys: [kSecClassValue, kSecAttrServiceValue, kSecAttrAccountValue, kSecReturnDataValue, kSecMatchLimitValue])
+        let keychainQuery: [ String : AnyObject ] = [
+            kSecClassValue as String : kSecClassGenericPasswordValue as AnyObject,
+            kSecAttrServiceValue as String : service as AnyObject,
+            kSecAttrAccountValue as String : account as AnyObject,
+            kSecReturnDataValue as String: true as AnyObject,
+            kSecMatchLimitValue as String: kSecMatchLimitOneValue as AnyObject]
         
         // Delete any existing items
         let status = SecItemDelete(keychainQuery as CFDictionary)
@@ -64,9 +70,11 @@ public class KeychainService: NSObject {
         if let dataFromString = data.data(using: String.Encoding.utf8, allowLossyConversion: false) {
             
             // Instantiate a new default keychain query
-            let keychainQuery: NSMutableDictionary = NSMutableDictionary(
-                objects: [kSecClassGenericPasswordValue, service, account, dataFromString],
-                forKeys: [kSecClassValue, kSecAttrServiceValue, kSecAttrAccountValue, kSecValueDataValue])
+            let keychainQuery : [ String : AnyObject ] = [
+            kSecClassValue as String : kSecClassGenericPasswordValue as AnyObject,
+            kSecAttrServiceValue as String: service as AnyObject,
+            kSecAttrAccountValue as String : account as AnyObject,
+            kSecValueDataValue as String : dataFromString as AnyObject]
             
             // Add the new keychain item
             let status = SecItemAdd(keychainQuery as CFDictionary, nil)
@@ -82,14 +90,17 @@ public class KeychainService: NSObject {
     class func loadPassword(service: String) -> (String?, String?) {
         // Instantiate a new default keychain query
         // Tell the query to return a result
-        let keychainQuery: NSMutableDictionary = NSMutableDictionary(
-            objects: [kSecClassGenericPassword, service, kCFBooleanTrue as Any, kCFBooleanTrue as Any, kSecMatchLimitOne],
-            forKeys: [kSecClass, kSecAttrServiceValue, kSecReturnData, kSecReturnAttributes, kSecMatchLimit])
+        let keychainQuery: [ String: AnyObject ] = [
+            kSecClass as String : kSecClassGenericPassword as AnyObject,
+            kSecAttrServiceValue as String : service as AnyObject,
+            kSecReturnData as String : true as AnyObject,
+            kSecReturnAttributes as String: true as AnyObject,
+            kSecMatchLimit as String : kSecMatchLimitOne as AnyObject]
         
         var item: CFTypeRef?
         
         // Search for the keychain items
-        let status: OSStatus = SecItemCopyMatching(keychainQuery, &item)
+        let status: OSStatus = SecItemCopyMatching(keychainQuery as CFDictionary, &item)
         var account: String? = nil
         var password: String? = nil
         
