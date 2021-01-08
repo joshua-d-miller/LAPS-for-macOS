@@ -5,6 +5,7 @@
 //  Created by Joshua D. Miller on 7/18/18.
 //  The Pennsylvania State University
 //  Icons made by Freepik http://www.freepik.com from Flaticon https://www.flaticon.com/ is licensed by Creative Commons BY 3.0 - http://creativecommons.org/licenses/by/3.0/"
+//  Icon updated for Big Sur by Joshua D. Miller - December 18, 2020
 
 import Cocoa
 import OpenDirectory

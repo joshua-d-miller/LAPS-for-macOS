@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		E515DA2B20FFB2A40072873F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E515DA2A20FFB2A40072873F /* AppDelegate.swift */; };
 		E515DA2D20FFB2A40072873F /* ComputerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E515DA2C20FFB2A40072873F /* ComputerViewController.swift */; };
-		E515DA2F20FFB2A40072873F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E515DA2E20FFB2A40072873F /* Assets.xcassets */; };
 		E515DA3220FFB2A40072873F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E515DA3020FFB2A40072873F /* Main.storyboard */; };
 		E515DA5F20FFBAE10072873F /* ADTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E515DA5E20FFBAE10072873F /* ADTools.swift */; };
 		E515DA6120FFC8F90072873F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E515DA6020FFC8F90072873F /* DateFormatter.swift */; };
 		E515DA6320FFC9160072873F /* TimeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E515DA6220FFC9160072873F /* TimeConversion.swift */; };
 		E5695F3921A48E55009592DC /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5695F3821A48E55009592DC /* DatePickerViewController.swift */; };
+		E5B07B1A258D0BCB0004413C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B07B19258D0BCB0004413C /* Assets.xcassets */; };
 		E5BD64B92104006C0084A4DB /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD64B82104006C0084A4DB /* Keychain.swift */; };
 		E5BD64BD210640C30084A4DB /* CredentialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD64BC210640C30084A4DB /* CredentialsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -23,7 +23,6 @@
 		E515DA2720FFB2A40072873F /* LAPS for macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LAPS for macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E515DA2A20FFB2A40072873F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E515DA2C20FFB2A40072873F /* ComputerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerViewController.swift; sourceTree = "<group>"; };
-		E515DA2E20FFB2A40072873F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E515DA3120FFB2A40072873F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E515DA3320FFB2A40072873F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E515DA3420FFB2A40072873F /* LAPS_for_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LAPS_for_macOS.entitlements; sourceTree = "<group>"; };
@@ -31,6 +30,7 @@
 		E515DA6020FFC8F90072873F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		E515DA6220FFC9160072873F /* TimeConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConversion.swift; sourceTree = "<group>"; };
 		E5695F3821A48E55009592DC /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		E5B07B19258D0BCB0004413C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Desktop/Assets.xcassets; sourceTree = "<group>"; };
 		E5BD64B82104006C0084A4DB /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		E5BD64BC210640C30084A4DB /* CredentialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +72,7 @@
 				E5BD64B82104006C0084A4DB /* Keychain.swift */,
 				E515DA6020FFC8F90072873F /* DateFormatter.swift */,
 				E515DA6220FFC9160072873F /* TimeConversion.swift */,
-				E515DA2E20FFB2A40072873F /* Assets.xcassets */,
+				E5B07B19258D0BCB0004413C /* Assets.xcassets */,
 				E515DA3020FFB2A40072873F /* Main.storyboard */,
 				E515DA5E20FFBAE10072873F /* ADTools.swift */,
 				E515DA3320FFB2A40072873F /* Info.plist */,
@@ -108,7 +108,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "The Pennsylvania State University";
 				TargetAttributes = {
 					E515DA2620FFB2A40072873F = {
@@ -145,7 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E515DA2F20FFB2A40072873F /* Assets.xcassets in Resources */,
+				E5B07B1A258D0BCB0004413C /* Assets.xcassets in Resources */,
 				E515DA3220FFB2A40072873F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +209,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -218,7 +219,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = VQ32N9FEBR;
+				DEVELOPMENT_TEAM = S5V34E9WLC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -238,7 +239,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -271,6 +272,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -280,7 +282,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = VQ32N9FEBR;
+				DEVELOPMENT_TEAM = S5V34E9WLC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -305,8 +307,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "LAPS for macOS/LAPS_for_macOS.entitlements";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VQ32N9FEBR;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -318,7 +320,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.LAPSformacOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "LAPS for macOS";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -328,8 +330,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "LAPS for macOS/LAPS_for_macOS.entitlements";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VQ32N9FEBR;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -341,7 +343,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.LAPSformacOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "LAPS for macOS";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
